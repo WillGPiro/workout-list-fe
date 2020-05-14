@@ -1,4 +1,5 @@
 import React from 'react';
+import { postExercise } from '../../services/exerciseFetch';
 
 const ExerciseForm = () => {
  const [name, setName] = useState('');
@@ -9,6 +10,7 @@ const ExerciseForm = () => {
 
  const handleSubmit = event => {
    event.preventDefault();
+   postExercise({ name, description, sets, reps, url })
  }
 
  //On submitting an exercise, we want to add this to our local state, redux state, and our backend database. 
