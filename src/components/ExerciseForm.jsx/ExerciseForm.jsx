@@ -1,0 +1,46 @@
+import React from 'react';
+
+const ExerciseForm = () => {
+ const [name, setName] = useState('');
+ const [description, setDescription] = useState('');
+ const [sets, setSets] = useState(2);
+ const [reps, setReps] = useState(6);
+ const [url, setUrl] = usetState('');   
+
+ const handleSubmit = event => {
+   event.preventDefault();
+ }
+
+ //On submitting an exercise, we want to add this to our local state, redux state, and our backend database. 
+  return (
+    <form onSubmit={}>
+      <input 
+        type="text" 
+        value={name} 
+        onChange={({ target }) => setName(target.value)} placeholder="Exercise Name" />
+      <textarea 
+        value={description} 
+        onChange={({ target }) => setDescription(target.valut)} 
+        placeholder="Write the description of your exercise here.">
+      </textarea>
+      <input 
+        type="number" 
+        value={sets} 
+        onChange={({ target }) => setSets(target.value)} 
+        placeholder="Enter number of sets." />
+      <input 
+        type="number" 
+        value={number} 
+        onChange={({ target }) => setReps(target.value)} 
+        placeholder="Enter number of reps." />
+      <input 
+        type="text" 
+        value={url} 
+        onChange={({ target }) => setUrl(target.value)} 
+        placeholder="Enter photo url" />
+      <button>Add Exercise</button>
+    </form>
+  )
+};
+
+export default ExerciseForm;
