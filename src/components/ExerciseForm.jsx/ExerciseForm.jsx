@@ -31,7 +31,7 @@ const ExerciseForm = () => {
 
       <textarea 
         value={description} 
-        onChange={({ target }) => setDescription(target.valut)} 
+        onChange={({ target }) => setDescription(target.value)} 
         placeholder="Write the description of your exercise here.">
       </textarea>
 
