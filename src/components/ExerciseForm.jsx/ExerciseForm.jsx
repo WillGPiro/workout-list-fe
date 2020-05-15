@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { postExercise } from '../../services/exerciseFetch';
+import { useDispatch } from 'react-redux'
+import { addExercise } from '../../actions/exerciseActions';
 
 const ExerciseForm = () => {
+ const dispatch = useDispatch();
  const [name, setName] = useState('');
  const [description, setDescription] = useState('');
  const [sets, setSets] = useState(2);
@@ -11,8 +14,10 @@ const ExerciseForm = () => {
  const handleSubmit = event => {
    event.preventDefault();
    postExercise({ name, description, sets, reps, url })
-    .then(exercise ={
+    .then(exercise => {
 
+
+      dispatch(addExercise(exercise));
     });
  };
 
